@@ -76,6 +76,12 @@
   .hero h1 em { font-style: italic; }
   .lead { font-size: 20px; line-height: 1.5; max-width: 34ch; margin-bottom: 30px; }
   .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .coaches { margin: -6px 0 30px; max-width: 520px; border-top: 2px solid var(--ink); }
+  .coaches > .mono { display: block; padding: 10px 0 0; color: var(--grey); }
+  .coaches ul { list-style: none; }
+  .coaches li { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 16px; padding: 12px 0; border-bottom: 1px solid var(--chalk); }
+  .coaches .cn { font-family: var(--serif); font-size: 30px; line-height: 1; }
+  .coaches .cr { font-family: var(--mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--grey); }
   .paths { margin-top: 36px; border-top: 2px solid var(--ink); }
   .paths a { display: grid; grid-template-columns: 44px 1fr auto; align-items: center; min-height: 52px; border-bottom: 1px solid var(--chalk); text-decoration: none; font-weight: 500; }
   .paths a span:first-child { font-family: var(--mono); font-size: 13px; color: var(--grey); }
@@ -263,7 +269,7 @@
 <div class="topline">
   <div class="wrap">
     <span class="mono" data-c="topline.left">Olympic weightlifting coaching · Pacific Northwest &amp; remote</span>
-    <span class="mono" data-c="topline.right">The remote team of Collective Weightlifting</span>
+    <span class="mono" data-c="topline.right">The remote team extension of Collective Weightlifting</span>
   </div>
 </div>
 
@@ -291,7 +297,14 @@
     <div>
       <div class="mono" data-c="hero.label">One-to-one coaching · Issue 01</div>
       <h1><span data-c="hero.headline">I'll see you in the</span> <em data-c="hero.headlineItalic">warm-up room.</em></h1>
-      <p class="lead" data-c="hero.intro">Coaching from a USA Weightlifting national-level coach who still competes. Our team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.</p>
+      <p class="lead" data-c="hero.intro">Our team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.</p>
+      <div class="coaches" data-show="hero.coaches.length">
+        <span class="mono" data-c="hero.coachesLabel">Meet the coaches</span>
+        <ul data-list="hero.coaches">
+          <li><span class="cn" data-c="name">Jacob Howard</span><span class="cr" data-c="role">Head Coach · National USAW Coach</span></li>
+          <li><span class="cn">Stephanie Langdon</span><span class="cr">Head Coach · USAW Level 2</span></li>
+        </ul>
+      </div>
       <div class="actions">
         <a class="btn btn-ink" href="APPLY_LINK" data-href="links.apply" data-c="hero.applyButton">Apply for coaching</a>
         <a class="btn btn-line" href="#plans" data-c="hero.plansButton">Ways to train</a>

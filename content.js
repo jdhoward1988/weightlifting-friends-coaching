@@ -37,7 +37,13 @@ window.SITE = {
     label: "One-to-one coaching · Issue 01",
     headline: "I'll see you in the",
     headlineItalic: "warm-up room.",
-    intro: "Meet our team:\n\nHead Coach: Jacob Howard\nNational USAW Coach\n\nHead Coach: Stephanie Langdon\nUSAW Level 2\n\nOur team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
+    intro:    "Our team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
+    coachesLabel: "Meet the coaches",
+    // Add, remove or reorder coaches here. Each shows as one line under the intro.
+    coaches: [
+      { name: "Jacob Howard",      role: "Head Coach · National USAW Coach" },
+      { name: "Stephanie Langdon", role: "Head Coach · USAW Level 2" }
+    ],
     applyButton: "Apply for coaching",
     plansButton: "Ways to train",
     photo: { file: "images/img-7273.jpg", alt: "", style: "bw", focus: "50% 50%" },
