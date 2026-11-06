@@ -1,75 +1,68 @@
 /* =====================================================================
    WEIGHTLIFTING FRIENDS · PAGE CONTENT
    ---------------------------------------------------------------------
-   This is the ONLY file you need to edit. The design (index.html) reads
-   everything from here, so changing words, prices or photos here never
-   touches the layout, fonts or colours.
+   This is the ONLY file you need to edit (or use edit.html). The design
+   (index.html) reads everything from here, so changing words, prices or
+   photos here never touches the layout, fonts or colours.
 
    Rules that keep it working:
    • Text goes inside "double quotes". Apostrophes (I'm, you'll) are fine.
-   • Every item in a list ends with a comma, except it doesn't matter
-     for the last one.
    • To add an item to a list, copy a whole { ... } block and paste it
      below the last one. To remove one, delete its whole block.
    • Photos: put the file in the images folder, then type its name here.
        style: "bw" (black & white), "natural" (colour), "warm" (35 mm warm)
-       focus: which part of the photo stays in frame when it's cropped,
-              "left/right% top/bottom%". "50% 50%" is the centre.
-              "30% 50%" keeps more of the left side, "50% 20%" more of the top.
-   • After saving, open your page with ?preview on the end of the address
-     (e.g. yoursite.com/?preview). A green bar means the content loaded;
-     a red bar means a quote or comma is missing.
+       focus: which part of the photo stays in frame, "left% top%".
+              "50% 50%" is the centre.
+   • After saving, open your page with ?preview on the end of the address.
+     A green bar means the content loaded; red means a quote or comma
+     is missing.
    ===================================================================== */
 
 window.SITE = {
 
-  /* ---------- Links used across the page ---------- */
+  /* ---------- Links ---------- */
   links: {
-    apply:       "APPLY_LINK",        // your application Google Form
-    inPerson:    "INPERSON_LINK",     // Collective Fitness membership / contact page
-    turnover:    "TURNOVER_LINK",     // The Turnover Creative Instagram or site
-    team:        "https://marketplace.trainheroic.com/workout-plan/team/weightlifting-friends",
-    instagram:   "https://instagram.com/weightliftingfriends"
+    apply: "APPLY_LINK",
+    inPerson: "https://collectivefitnessgym.com/",
+    turnover: "https://www.instagram.com/theturnovercreative?cplk=MWM3cmF2OGQzYmZ5MA%3D%3D&utm_source=qr",
+    team: "",
+    instagram: "https://instagram.com/collective_weightlifting"
   },
 
-  /* ---------- Thin bar at the very top ---------- */
-  topline: {
-    left:  "Olympic weightlifting coaching · Pacific Northwest & remote",
-    right: "The remote team of Collective Weightlifting"
-  },
+  /* ---------- Top bar ---------- */
+  topline: { left: "Olympic weightlifting coaching · Pacific Northwest & remote", right: "The remote team extension of Collective Weightlifting" },
 
-  /* ---------- Hero (first screen) ---------- */
+  /* ---------- First screen ---------- */
   hero: {
-    label:    "One-to-one coaching · Issue 01",
+    label: "One-to-one coaching · Issue 01",
     headline: "I'll see you in the",
     headlineItalic: "warm-up room.",
-    intro:    "Coaching from a USA Weightlifting national-level coach who still competes. Our team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
+    intro: "Meet our team:\n\nHead Coach: Jacob Howard\nNational USAW Coach\n\nHead Coach: Stephanie Langdon\nUSAW Level 2\n\nOur team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
     applyButton: "Apply for coaching",
     plansButton: "Ways to train",
-    photo: { file: "images/hero-snatch.jpg", alt: "Masters lifter in the receiving position of a snatch", style: "bw", focus: "38% 50%" },
+    photo: { file: "images/img-7273.jpg", alt: "", style: "bw", focus: "50% 50%" },
     photoCredit: "Photo · The Turnover Creative",
-    // The three "start with where you are" links. "goesTo" must match a lifter id below.
     paths: [
       { text: "I'm chasing a qualifying total", goesTo: "competitive" },
-      { text: "I'm a masters lifter",           goesTo: "masters" },
-      { text: "I'm coming from CrossFit",       goesTo: "crossfit" }
+      { text: "I'm a masters lifter", goesTo: "masters" },
+      { text: "I'm coming from CrossFit", goesTo: "crossfit" }
     ]
   },
 
   /* ---------- Results strip ---------- */
   results: {
     label: "Results · athletes developed on this team",
-    note:  "Qualified to compete",
+    note: "Qualified to compete",
     rows: [
       { level: "Junior Nationals", who: "Youth and junior lifters, first meet to national stage", result: "QUALIFIED" },
-      { level: "Senior Nationals", who: "Open-age competitors chasing national totals",           result: "QUALIFIED" },
-      { level: "Masters Worlds",   who: "Masters lifters competing internationally",              result: "QUALIFIED" }
+      { level: "Senior Nationals", who: "Open-age competitors chasing national totals", result: "QUALIFIED" },
+      { level: "Masters Worlds", who: "Masters lifters competing internationally", result: "QUALIFIED" }
     ]
   },
 
   /* ---------- Your story ---------- */
   story: {
-    label:    "Feature · Why I coach",
+    label: "Feature · Why I coach",
     headline: "Ten years waiting for coaching I could get to.",
     photo: { file: "images/masters-chalk.jpg", alt: "Lifter chalking up at the chalk bowl", style: "bw", focus: "50% 50%" },
     photoCaption: "Waiting is part of the story.",
@@ -83,10 +76,10 @@ window.SITE = {
     signature: "Jacob Howard · USA Weightlifting National Level Coach"
   },
 
-  /* ---------- Who I coach (three lifter types) ---------- */
+  /* ---------- Who I coach ---------- */
   lifters: {
-    label:   "Who I coach",
-    heading: ["Three kinds of lifter.", "Three different plans."],   // second line shows in italics
+    label: "Who I coach",
+    heading: ["Three kinds of lifter.", "Three different plans."],
     types: [
       {
         id: "competitive",
@@ -124,35 +117,36 @@ window.SITE = {
     ]
   },
 
-  /* ---------- Meet day (black Warm-Up Room section) ---------- */
+  /* ---------- Meet day ---------- */
   meetDay: {
-    heading:      "Meet day.",
-    headingPink:  "Built backward.",
-    topTag:       "ATTEMPT PLAN · 48 HRS OUT",
-    photoTag:     "IN THE WARM-UP ROOM",
-    bottomTag:    "EVERY USAW NATIONAL MEET · TEAM TRAVELS",
-    bigPhoto:   { file: "images/attempt-card.jpg", alt: "Lifter in a snatch with a hand-written attempt card in the foreground", focus: "40% 50%" },  // shown pink
-    smallPhoto: { file: "images/bar-detail.jpg",   alt: "Close-up of shoulders under a loaded competition bar",                 focus: "30% 50%" },  // shown B&W
+    heading: "Meet day.",
+    headingPink: "Built backward.",
+    topTag: "ATTEMPT PLAN · 48 HRS OUT",
+    photoTag: "IN THE WARM-UP ROOM",
+    bottomTag: "EVERY USAW NATIONAL MEET · TEAM TRAVELS",
+    bigPhoto: { file: "images/attempt-card.jpg", alt: "Lifter in a snatch with a hand-written attempt card in the foreground", focus: "40% 50%" },
+    smallPhoto: { file: "images/bar-detail.jpg", alt: "Close-up of shoulders under a loaded competition bar", focus: "30% 50%" },
     intro: "Most remote coaching ends when the program is sent. Ours is built to finish on a platform. We agree your competition calendar at the start, and every block ends at a meet.",
     rules: [
       { title: "Attempt plan + warm-up timeline", text: "Sent 48 hours before weigh-in, once the session start list is out." },
-      { title: "In person at national meets",     text: "When the team travels to a USA Weightlifting national event, coached athletes there are coached in person." },
-      { title: "Remote for everything else",      text: "A live line from your first warm-up to your last attempt, with attempt changes by text." },
-      { title: "Debrief within 72 hours",         text: "What to keep, what to fix, and the first week of your next block." }
+      { title: "In person at national meets", text: "When the team travels to a USA Weightlifting national event, coached athletes there are coached in person." },
+      { title: "Remote for everything else", text: "A live line from your first warm-up to your last attempt, with attempt changes by text." },
+      { title: "Debrief within 72 hours", text: "What to keep, what to fix, and the first week of your next block." }
     ]
   },
 
-  /* ---------- Coaching options and prices ---------- */
+  /* ---------- Coaching and prices ---------- */
   plans: {
-    label:   "Ways to train",
+    label: "Ways to train",
     heading: ["Pick how closely", "we work together."],
-    // featured: true = the black highlighted card. badge: leave "" for none.
     options: [
       {
-        featured: false, badge: "",
+        featured: false,
+        badge: "",
         label: "Remote · team",
-        name:  "Team Programming",
-        price: "$20", priceNote: " / month",
+        name: "Team Programming",
+        price: "$20",
+        priceNote: " / month",
         forWho: "For self-directed lifters who want structure and a team.",
         features: [
           "Team program on TrainHeroic",
@@ -160,13 +154,16 @@ window.SITE = {
           "Meet taper available, $15",
           "Cancel any time"
         ],
-        button: "Join the team", buttonLink: "https://marketplace.trainheroic.com/workout-plan/team/weightlifting-friends"
+        button: "Join the team",
+        buttonLink: "https://marketplace.trainheroic.com/workout-plan/team/weightlifting-friends"
       },
       {
-        featured: true, badge: "BY APPLICATION · LIMITED SEATS",
+        featured: true,
+        badge: "BY APPLICATION · LIMITED SEATS",
         label: "Remote · one-to-one",
-        name:  "Coached",
-        price: "$295", priceNote: " / month",          // SUGGESTED from market research ($200–$350 range)
+        name: "Coached",
+        price: "$295",
+        priceNote: " / month",
         forWho: "For lifters with a meet in mind who want a coach in their corner.",
         features: [
           "Monthly plan written for you, adjusted every week",
@@ -176,13 +173,16 @@ window.SITE = {
           "Meet-day coaching: in person at nationals, remote everywhere else",
           "12-week blocks; drop to Team between seasons"
         ],
-        button: "Apply", buttonLink: "APPLY_LINK"
+        button: "Apply",
+        buttonLink: "APPLY_LINK"
       },
       {
-        featured: false, badge: "",
+        featured: false,
+        badge: "",
         label: "In person · the gym",
-        name:  "Collective Weightlifting",
-        price: "Gym", priceNote: " membership",
+        name: "Collective Weightlifting",
+        price: "Gym",
+        priceNote: " membership",
         forWho: "For lifters near the gym who want to train with the team.",
         features: [
           "Coached training with the in-house team",
@@ -190,28 +190,28 @@ window.SITE = {
           "New lifters and 10-year veterans side by side",
           "Pair with Coached for in-person check-ups"
         ],
-        button: "Ask about the gym", buttonLink: "INPERSON_LINK"
+        button: "Ask about the gym",
+        buttonLink: "INPERSON_LINK"
       }
     ],
-    // The dashed strip under the cards. Set show: false to hide it.
     audit: {
       show: true,
       name: "Lift Audit",
-      text: "Not sure yet? Send your lifts and get a full video breakdown, a 45-minute call and four weeks of priorities. $150, fully credited if you join Coached within 14 days.",   // SUGGESTED price
+      text: "Not sure yet? Send your lifts and get a full video breakdown, a 45-minute call and four weeks of priorities. $150, fully credited if you join Coached within 14 days.",
       button: "Book an audit"
     }
   },
 
   /* ---------- How it starts ---------- */
   steps: {
-    label:   "How it starts",
+    label: "How it starts",
     heading: ["From application", "to your first meet."],
     items: [
-      { title: "Apply",        text: "Your lifts, your goals, and the meet you want to be ready for." },
-      { title: "Talk",         text: "A 20–30 minute call. We watch one of your lifts together." },
+      { title: "Apply", text: "Your lifts, your goals, and the meet you want to be ready for." },
+      { title: "Talk", text: "A 20–30 minute call. We watch one of your lifts together." },
       { title: "Map the year", text: "We agree your meets and plan your first block back from the first one." },
-      { title: "Train",        text: "Film your key sets. Get specific feedback within a day." },
-      { title: "Compete",      text: "Show up with an attempt plan, a warm-up timeline, and your coach." }
+      { title: "Train", text: "Film your key sets. Get specific feedback within a day." },
+      { title: "Compete", text: "Show up with an attempt plan, a warm-up timeline, and your coach." }
     ]
   },
 
@@ -221,7 +221,7 @@ window.SITE = {
     heading: "A team,",
     headingItalic: "not a subscription.",
     text: "We bring a big team and big energy to every meet, whether it's someone's first total or a lifter with more than ten years in the sport. Remote or in the gym, you're part of the same team.",
-    tallPhoto:  { file: "images/team-clap.jpg",   alt: "Teammate clapping as a lifter stands up a heavy pull",         style: "bw",   focus: "62% 50%" },
+    tallPhoto: { file: "images/team-clap.jpg", alt: "Teammate clapping as a lifter stands up a heavy pull", style: "bw", focus: "62% 50%" },
     shortPhoto: { file: "images/garage-sled.jpg", alt: "Lifter smiling as she pulls a loaded sled out of her garage gym", style: "warm", focus: "50% 42%" }
   },
 
@@ -230,16 +230,19 @@ window.SITE = {
     label: "Questions",
     heading: ["Before", "you apply."],
     items: [
-      { q: "Can remote coaching really fix my technique?", a: "It works when the feedback is fast and specific. You film your key sets from a side or 45° angle, and you get a reply within a day about the exact lift, not a general note. If you're near the gym, you can add in-person sessions too." },
-      { q: "Do I have to compete?",                       a: "No. But most people progress faster with a date to aim at, so we'll talk about whether a meet makes sense for you." },
-      { q: "I already have a coach. Can I still apply?",  a: "Please talk to your current coach first. We'd rather you move with their knowledge than behind their back." },
-      { q: "Can I pause between seasons?",                a: "Yes. After a block, you can drop to Team Programming and keep priority for your Coached seat for three months." },
-      { q: "Do you coach lifters under 18?",              a: "Yes, with a parent or guardian completing the application and included on all coaching messages and calls." },
-      { q: "Why limited seats?",                          a: "Detailed video analysis and meet-day coaching take real time. Keeping the group small is how we keep the promises on this page." }
+      {
+        q: "Can remote coaching really fix my technique?",
+        a: "It works when the feedback is fast and specific. You film your key sets from a side or 45° angle, and you get a reply within a day about the exact lift, not a general note. If you're near the gym, you can add in-person sessions too."
+      },
+      { q: "Do I have to compete?", a: "No. But most people progress faster with a date to aim at, so we'll talk about whether a meet makes sense for you." },
+      { q: "I already have a coach. Can I still apply?", a: "Please talk to your current coach first. We'd rather you move with their knowledge than behind their back." },
+      { q: "Can I pause between seasons?", a: "Yes. After a block, you can drop to Team Programming and keep priority for your Coached seat for three months." },
+      { q: "Do you coach lifters under 18?", a: "Yes, with a parent or guardian completing the application and included on all coaching messages and calls." },
+      { q: "Why limited seats?", a: "Detailed video analysis and meet-day coaching take real time. Keeping the group small is how we keep the promises on this page." }
     ]
   },
 
-  /* ---------- Closing call to action (black section) ---------- */
+  /* ---------- Closing section ---------- */
   closing: {
     tag: "COACHED SEATS OPEN",
     heading: ["Which meet are", "you getting ready for?"],
