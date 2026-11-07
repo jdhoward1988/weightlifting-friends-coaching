@@ -37,14 +37,19 @@ window.SITE = {
     label: "One-to-one coaching · Issue 01",
     headline: "I'll see you in the",
     headlineItalic: "warm-up room.",
-    intro: "Meet our team:\n\nHead Coach: Jacob Howard\nNational USAW Coach\n\nHead Coach: Stephanie Langdon\nUSAW Level 2\n\nOur team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
+    intro: "Our team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
+    coachesLabel: "Meet the coaches",
+    coaches: [
+      { name: "Jacob Howard", role: "Head Coach · National USAW Coach" },
+      { name: "Stephanie Langdon", role: "Head Coach · USAW Level 2" }
+    ],
     applyButton: "Apply for coaching",
     plansButton: "Ways to train",
-    photo: { file: "images/img-7273.jpg", alt: "", style: "bw", focus: "50% 50%" },
+    photo: { file: "images/img-7273.jpg", alt: "Lifter holding a barbell overhead at a meet while a teammate watches", style: "bw", focus: "50% 50%" },
     photoCredit: "Photo · The Turnover Creative",
     paths: [
       { text: "I'm chasing a qualifying total", goesTo: "competitive" },
-      { text: "I'm a masters lifter", goesTo: "masters" },
+      { text: "I lift for fun and longevity", goesTo: "hobbyists" },
       { text: "I'm coming from CrossFit", goesTo: "crossfit" }
     ]
   },
@@ -64,7 +69,7 @@ window.SITE = {
   story: {
     label: "Feature · Why I coach",
     headline: "Ten years waiting for coaching I could get to.",
-    photo: { file: "images/img-0024.jpg", alt: "", style: "bw", focus: "50% 50%" },
+    photo: { file: "images/img-0024.jpg", alt: "Lifter chalking his hands in front of the meet scoreboard", style: "bw", focus: "50% 50%" },
     photoCaption: "Waiting is part of the story.",
     paragraphs: [
       "I fell in love with weightlifting at a time when there was nowhere near me to learn it properly. No high-level coaches, no real facilities. It took about ten years, getting through college and watching CrossFit put barbells in gyms everywhere, before proper weightlifting was somewhere I could actually train.",
@@ -85,7 +90,7 @@ window.SITE = {
         id: "competitive",
         label: "01 · Competitive",
         title: "Chasing a qualifying total",
-        photo: { file: "images/img-0793.jpg", alt: "", style: "natural", focus: "45% 32%" },
+        photo: { file: "images/img-0793.jpg", alt: "Lifter at full extension pulling a loaded barbell", style: "natural", focus: "45% 32%" },
         paragraphs: [
           "You know the total you need, the class you'll lift in and when the window closes. What's missing is someone watching every session and anticipating the changes your body will need next week because of what we saw.",
           "Plan your block backward from your meet and your class."
@@ -93,10 +98,10 @@ window.SITE = {
         goal: "The total you need, on the day it counts."
       },
       {
-        id: "Hobbyists ",
+        id: "hobbyists",
         label: "02 · Hobbyists",
         title: "Lifting better for longevity",
-        photo: { file: "images/05d439b7-59d1-43e8-bd72-7121bf75ec82.jpg", alt: "", style: "bw", focus: "41% 50%" },
+        photo: { file: "images/05d439b7-59d1-43e8-bd72-7121bf75ec82.jpg", alt: "Lifter holding a barbell in the front rack, black and white", style: "bw", focus: "41% 50%" },
         paragraphs: [
           "A hard week at work shows up in the snatch, so your training adjusts to how you actually recovered.  Maybe you don’t have a competitive bone in your body but the community drew you in. Or maybe you are a die hard competitor but realistically this comes somewhere after your day job and your family time. ",
           "We map your season around the meets you care about."
@@ -104,10 +109,10 @@ window.SITE = {
         goal: "A season of meets, and still lifting at 55 or beyond."
       },
       {
-        id: "CrossFit",
+        id: "crossfit",
         label: "03 · CrossFit Enthusiasts",
         title: "Making the improvements to move faster",
-        photo: { file: "images/img-8730.jpg", alt: "", style: "bw", focus: "50% 67%" },
+        photo: { file: "images/img-8730.jpg", alt: "Athlete in the bottom of a front squat in a CrossFit gym", style: "bw", focus: "50% 67%" },
         paragraphs: [
           "You're already strong. The snatch and clean & jerk are where the skill may be lacking. We've helped plenty of CrossFit athletes get more efficient on the barbell, and it carries straight back to your workouts.",
           "You don't have to quit CrossFit. A couple of focused days a week is enough to start, and you may get hooked and come over to our side full time. "
@@ -124,8 +129,8 @@ window.SITE = {
     topTag: "ATTEMPT PLAN · 48 HRS OUT",
     photoTag: "IN THE WARM-UP ROOM",
     bottomTag: "EVERY USAW NATIONAL MEET · TEAM TRAVELS",
-    bigPhoto: { file: "images/img-4418.jpg", alt: "", focus: "50% 63%" },
-    smallPhoto: { file: "images/img-5735.jpg", alt: "", focus: "50% 50%" },
+    bigPhoto: { file: "images/img-4418.jpg", alt: "Lifter holding a barbell overhead on the platform in a busy meet hall", focus: "50% 63%" },
+    smallPhoto: { file: "images/img-5735.jpg", alt: "Lifter in a split jerk with the bar locked out overhead", focus: "50% 50%" },
     intro: "Our program is built to finish on a platform with us by your side. We agree to your competition calendar at the start, and every important block ends at a meet. ",
     rules: [
       { title: "Attempt plan + warm-up timeline", text: "That’s on us, we’ll get your feedback on your goals and how things are feeling. " },
@@ -221,8 +226,8 @@ window.SITE = {
     heading: "A team,",
     headingItalic: "not a subscription.",
     text: "We bring a big team and big energy to every meet, whether it's someone's first total or a lifter with more than ten years in the sport. Remote or in the gym, you're part of the same team.",
-    tallPhoto: { file: "images/a7v06640.jpg", alt: "", style: "bw", focus: "50% 35%" },
-    shortPhoto: { file: "images/a7v00388.jpg", alt: "", style: "warm", focus: "50% 33%" }
+    tallPhoto: { file: "images/a7v06640.jpg", alt: "Coach helping a lifter get ready in the warm-up area", style: "bw", focus: "50% 35%" },
+    shortPhoto: { file: "images/a7v00388.jpg", alt: "Two teammates laughing together", style: "warm", focus: "50% 33%" }
   },
 
   /* ---------- Questions ---------- */
