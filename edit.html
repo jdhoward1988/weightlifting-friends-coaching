@@ -130,6 +130,15 @@
     .bar h1 { font-size: 22px; width: 100%; }
     .status { margin-right: auto; }
   }
+
+  /* On-page messages (no browser pop-ups: some browsers block them) */
+  .toast { position: fixed; right: 20px; bottom: 20px; z-index: 50; max-width: calc(100% - 32px); width: max-content;
+    background: var(--ink); color: var(--paper); padding: 10px 12px 10px 16px; display: flex; align-items: center; gap: 14px; font-size: 14px; box-shadow: 0 4px 16px rgba(0,0,0,.25); }
+  .toast[hidden] { display: none; }
+  .toast .btn { border-color: var(--paper); color: var(--paper); min-height: 34px; }
+  .toast .btn:hover { background: var(--paper); color: var(--ink); }
+  @media (max-width: 899px) { .toast { right: 16px; left: 16px; width: auto; max-width: none; } }
+  .btn.arming { background: var(--red); border-color: var(--red); color: #fff; }
 </style>
 </head>
 <body>
@@ -137,7 +146,7 @@
 <header class="bar">
   <h1>Page editor</h1>
   <span class="status" id="status" role="status" aria-live="polite">No changes</span>
-  <button class="btn btn-sm" id="resetBtn" type="button">Start over</button>
+  <button class="btn btn-sm" id="resetBtn" type="button" title="Throw away all edits and go back to the live page">Start over</button>
   <button class="btn btn-ink" id="downloadBtn" type="button">Download update</button>
 </header>
 
@@ -169,6 +178,8 @@
     </div>
   </div>
 </div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" hidden><span id="toastMsg"></span></div>
 
 <dialog id="doneDialog">
   <h2>Update downloaded</h2>
@@ -284,6 +295,22 @@
     return '(empty)';
   }
 
+  /* ---------- On-page message with optional action (replaces browser pop-ups) ---------- */
+  var toastTimer = null;
+  function toast(msg, actionLabel, action, ms) {
+    var t = $('toast'), m = $('toastMsg');
+    var old = t.querySelector('button'); if (old) old.remove();
+    m.textContent = msg;
+    if (actionLabel && action) {
+      var b = el('button', { class: 'btn btn-sm', type: 'button' }, [actionLabel]);
+      b.onclick = function () { clearTimeout(toastTimer); t.hidden = true; action(); };
+      t.appendChild(b);
+    }
+    t.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { t.hidden = true; }, ms || (action ? 8000 : 2500));
+  }
+
   /* ---------- Change tracking, saving, preview ---------- */
   var pvTimer = null, lastDownloaded = null;
   function changed(path) {
@@ -313,7 +340,7 @@
     var imgs = {}; Object.keys(images).forEach(function (k) { if (usedFiles()[k]) imgs[k] = images[k].dataUrl; });
     if (!store(LS_IMG, JSON.stringify(imgs)) && !imgSaveWarned) {
       imgSaveWarned = true;
-      alert('Your text edits are saved on this device, but new photos are too big to keep if you close this page. Download your update before closing.');
+      toast('Text edits are saved on this device, but new photos are too big to keep if you close this page. Download your update before closing.', null, null, 12000);
     }
   }
   function usedFiles() {
@@ -489,10 +516,20 @@
     var a = path.join('.') + '#'; var oi = openSections[a + i]; openSections[a + i] = openSections[a + (i + d)]; openSections[a + (i + d)] = oi;
     buildForm(path[0]); changed(path);
   }
+  // Removes straight away and offers Undo (no pop-up, so it works in every browser).
   function remove(path, i) {
     var arr = getAt(state, path);
-    if (!confirm('Remove "' + summaryOf(arr[i]).slice(0, 60) + '"?')) return;
-    arr.splice(i, 1); buildForm(path[0]); changed(path);
+    var item = arr.splice(i, 1)[0];
+    var key = path.join('.') + '#';
+    for (var j = i; j < arr.length; j++) openSections[key + j] = openSections[key + (j + 1)];
+    buildForm(path[0]); changed(path);
+    var name = String(summaryOf(item) || '').slice(0, 50);
+    toast('Removed "' + name + (name.length === 50 ? '…' : '') + '"', 'Undo', function () {
+      getAt(state, path).splice(i, 0, item);
+      openSections[key + i] = true;
+      buildForm(path[0]); changed(path);
+      toast('Restored');
+    });
   }
   function add(path) {
     var arr = getAt(state, path);
@@ -576,7 +613,7 @@
         buildForm(path[0]); changed(path);
       }).catch(function () {
         replaceBtn.textContent = 'Replace photo';
-        alert('That photo couldn\'t be opened. Try a JPEG or PNG. iPhone photos: Settings > Camera > Formats > Most Compatible, or share it as JPEG first.');
+        toast('That photo couldn\'t be opened. Try a JPEG or PNG. iPhone: Settings › Camera › Formats › Most Compatible.', null, null, 10000);
       });
     });
     return box;
@@ -734,7 +771,18 @@
     images = {}; store(LS_KEY, null); store(LS_IMG, null);
     $('draftNotice').hidden = true; buildForm(); changed();
   }
-  $('resetBtn').onclick = function () { if (confirm('Throw away all edits and go back to the live version of the page?')) resetAll(); };
+  // Two taps instead of a pop-up: first tap arms it, second tap within 4 seconds confirms.
+  var resetTimer = null;
+  $('resetBtn').onclick = function () {
+    var b = $('resetBtn');
+    if (b.classList.contains('arming')) {
+      clearTimeout(resetTimer); b.classList.remove('arming'); b.textContent = 'Start over';
+      resetAll(); toast('Back to the live version of the page');
+      return;
+    }
+    b.classList.add('arming'); b.textContent = 'Tap again to discard edits';
+    resetTimer = setTimeout(function () { b.classList.remove('arming'); b.textContent = 'Start over'; }, 4000);
+  };
   $('discardDraft').onclick = resetAll;
 
   window.addEventListener('beforeunload', function (e) {
