@@ -45,7 +45,7 @@ window.SITE = {
     ],
     applyButton: "Apply for coaching",
     plansButton: "Ways to train",
-    photo: { file: "images/img-7273.jpg", alt: "Lifter holding a barbell overhead at a meet while a teammate watches", style: "bw", focus: "50% 50%" },
+    photo: { file: "images/img-7273.jpg", alt: "Lifter holding a barbell overhead at a meet while a teammate watches", style: "bw", focus: "67% 12%" },
     photoCredit: "Photo · The Turnover Creative",
     paths: [
       { text: "I'm chasing a qualifying total", goesTo: "competitive" },
@@ -56,10 +56,10 @@ window.SITE = {
 
   /* ---------- Results strip ---------- */
   results: {
-    label: "Goals · Results developed on this team",
-    note: "",
+    label: "Goals ·",
+    note: "Results developed on this team",
     rows: [
-      { level: "Junior Nationals", who: "Youth and junior lifters, first meet to national stage", result: "QUALIFIED" },
+      { level: "Junior Nationals", who: "Junior lifters, first meet to the national stage", result: "QUALIFIED" },
       { level: "Senior Nationals", who: "Open-age competitors chasing national totals", result: "QUALIFIED" },
       { level: "Masters Worlds", who: "Masters lifters competing internationally", result: "QUALIFIED" }
     ]
@@ -69,7 +69,7 @@ window.SITE = {
   story: {
     label: "Feature · Why I coach",
     headline: "Ten years waiting for coaching I could get to.",
-    photo: { file: "images/img-0024.jpg", alt: "Lifter chalking his hands in front of the meet scoreboard", style: "bw", focus: "50% 50%" },
+    photo: { file: "images/img-0024.jpg", alt: "Lifter chalking his hands in front of the meet scoreboard", style: "bw", focus: "50% 83%" },
     photoCaption: "Waiting is part of the story.",
     paragraphs: [
       "I fell in love with weightlifting at a time when there was nowhere near me to learn it properly. No high-level coaches, no real facilities. It took about ten years, getting through college and watching CrossFit put barbells in gyms everywhere, before proper weightlifting was somewhere I could actually train.",
@@ -90,7 +90,7 @@ window.SITE = {
         id: "competitive",
         label: "01 · Competitive",
         title: "Chasing a qualifying total",
-        photo: { file: "images/img-0793.jpg", alt: "Lifter at full extension pulling a loaded barbell", style: "natural", focus: "45% 32%" },
+        photo: { file: "images/img-0793.jpg", alt: "Lifter at full extension pulling a loaded barbell", style: "bw", focus: "53% 27%" },
         paragraphs: [
           "You know the total you need, the class you'll lift in and when the window closes. What's missing is someone watching every session and anticipating the changes your body will need next week because of what we saw.",
           "Plan your block backward from your meet and your class."
@@ -101,7 +101,7 @@ window.SITE = {
         id: "hobbyists",
         label: "02 · Hobbyists",
         title: "Lifting better for longevity",
-        photo: { file: "images/05d439b7-59d1-43e8-bd72-7121bf75ec82.jpg", alt: "Lifter holding a barbell in the front rack, black and white", style: "bw", focus: "41% 50%" },
+        photo: { file: "images/05d439b7-59d1-43e8-bd72-7121bf75ec82.jpg", alt: "Lifter holding a barbell in the front rack, black and white", style: "bw", focus: "26% 32%" },
         paragraphs: [
           "A hard week at work shows up in the snatch, so your training adjusts to how you actually recovered.  Maybe you don’t have a competitive bone in your body but the community drew you in. Or maybe you are a die hard competitor but realistically this comes somewhere after your day job and your family time. ",
           "We map your season around the meets you care about."
@@ -125,12 +125,12 @@ window.SITE = {
   /* ---------- Meet day ---------- */
   meetDay: {
     heading: "Meet day.",
-    headingPink: "Built backward.",
+    headingPink: "Built back",
     topTag: "ATTEMPT PLAN · 48 HRS OUT",
     photoTag: "IN THE WARM-UP ROOM",
-    bottomTag: "EVERY USAW NATIONAL MEET · TEAM TRAVELS",
-    bigPhoto: { file: "images/img-4418.jpg", alt: "Lifter holding a barbell overhead on the platform in a busy meet hall", focus: "50% 63%" },
-    smallPhoto: { file: "images/img-5735.jpg", alt: "Lifter in a split jerk with the bar locked out overhead", focus: "50% 50%" },
+    bottomTag: "EVERY USAW NATIONAL MEET",
+    bigPhoto: { file: "images/img-4418.jpg", alt: "Lifter holding a barbell overhead on the platform in a busy meet hall", focus: "50% 88%" },
+    smallPhoto: { file: "images/img-5735.jpg", alt: "Lifter in a split jerk with the bar locked out overhead", focus: "50% 78%" },
     intro: "Our program is built to finish on a platform with us by your side. We agree to your competition calendar at the start, and every important block ends at a meet. ",
     rules: [
       { title: "Attempt plan + warm-up timeline", text: "That’s on us, we’ll get your feedback on your goals and how things are feeling. " },
@@ -200,7 +200,7 @@ window.SITE = {
       }
     ],
     audit: {
-      show: true,
+      show: false,
       name: "Lift Audit",
       text: "Not sure yet? Send your lifts and get a full video breakdown, a 45-minute call and four weeks of priorities. $80, fully credited if you join Coached within 14 days.",
       button: "Book an audit"
@@ -240,10 +240,10 @@ window.SITE = {
         a: "It works when the feedback is fast and specific. You film your key sets from a side or 45° angle, and you get a reply within a day about the exact lift, not a general note. If you're near the gym, you can add in-person sessions too."
       },
       { q: "Do I have to compete?", a: "No. But most people progress faster with a date to aim at, so we'll talk about whether a meet makes sense for you." },
-      { q: "I already have a coach. Can I still apply?", a: "Please talk to your current coach first. We'd rather you move with their knowledge than behind their back." },
       { q: "Can I pause between seasons?", a: "Yes. After a block, you can drop to Team Programming and keep priority for your Coached seat for three months." },
       { q: "Do you coach lifters under 18?", a: "Yes, with a parent or guardian completing the application and included on all coaching messages and calls." },
-      { q: "Why limited seats?", a: "Detailed video analysis and meet-day coaching take real time. Keeping the group small is how we keep the promises on this page." }
+      { q: "Why limited seats?", a: "Detailed video analysis and meet-day coaching take real time. Keeping the group small is how we keep the promises on this page." },
+      { q: "I already have a coach. Can I still apply?", a: "Please talk to your current coach first. We'd rather you move with their knowledge than behind their back." }
     ]
   },
 
