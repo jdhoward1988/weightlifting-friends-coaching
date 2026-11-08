@@ -39,7 +39,6 @@ window.SITE = {
     headlineItalic: "warm-up room.",
     intro: "Our team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
     coachesLabel: "Meet the coaches",
-    // storyId: which story the name links to ("why-i-coach" is your story; others match a coach id below)
     coaches: [
       { name: "Jacob Howard", role: "Head Coach · National USAW Coach", storyId: "why-i-coach" },
       { name: "Stephanie Langdon", role: "Head Coach · USAW Level 2", storyId: "stephanie-langdon" }
@@ -82,19 +81,17 @@ window.SITE = {
     signature: "Jacob Howard · USA Weightlifting National Level Coach"
   },
 
-
   /* ---------- Other coaches' stories ---------- */
   coachStories: {
-    show: true,                       // false hides the whole section
-    label:   "The coaches",
-    heading: ["More than one coach", "in your corner."],   // second line shows in italics
-    // One card per coach. "id" must be lowercase with no spaces; "Meet the coaches" links use it.
+    show: true,
+    label: "The coaches",
+    heading: ["More than one coach", "in your corner."],
     coaches: [
       {
         id: "stephanie-langdon",
         name: "Stephanie Langdon",
         role: "Head Coach · USAW Level 2",
-        photo: { file: "images/coach-photo-placeholder.jpg", alt: "", style: "bw", focus: "50% 50%" },
+        photo: { file: "images/img-6083.jpg", alt: "", style: "bw", focus: "50% 50%" },
         paragraphs: [
           "[Stephanie's story: how she found weightlifting]",
           "[What she focuses on as a coach, and who she loves working with]"
@@ -103,10 +100,11 @@ window.SITE = {
       }
     ]
   },
+
   /* ---------- Who I coach ---------- */
   lifters: {
-    label: "Who I coach",
-    heading: ["Any kind of lifter.", "Three different plans."],
+    label: "Who we coach",
+    heading: ["Any kind of lifter.", ""],
     types: [
       {
         id: "competitive",
@@ -133,7 +131,7 @@ window.SITE = {
       {
         id: "crossfit",
         label: "03 · CrossFit Enthusiasts",
-        title: "Making the improvements to move faster",
+        title: "Lifting better to move faster",
         photo: { file: "images/img-8730.jpg", alt: "Athlete in the bottom of a front squat in a CrossFit gym", style: "bw", focus: "50% 67%" },
         paragraphs: [
           "You're already strong. The snatch and clean & jerk are where the skill may be lacking. We've helped plenty of CrossFit athletes get more efficient on the barbell, and it carries straight back to your workouts.",
@@ -249,7 +247,7 @@ window.SITE = {
     headingItalic: "not a subscription.",
     text: "We bring a big team and big energy to every meet, whether it's someone's first total or a lifter with more than ten years in the sport. Remote or in the gym, you're part of the same team.",
     tallPhoto: { file: "images/a7v06640.jpg", alt: "Coach helping a lifter get ready in the warm-up area", style: "bw", focus: "50% 35%" },
-    shortPhoto: { file: "images/a7v00388.jpg", alt: "Two teammates laughing together", style: "warm", focus: "50% 33%" }
+    shortPhoto: { file: "images/a7v00388.jpg", alt: "Two teammates laughing together", style: "warm", focus: "50% 10%" }
   },
 
   /* ---------- Questions ---------- */
