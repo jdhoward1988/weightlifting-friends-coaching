@@ -204,6 +204,7 @@
     hero:    { t: 'First screen',         hint: 'Headline, intro, the coaches list, main photo and the three "start here" links.', sel: '.hero' },
     results: { t: 'Results strip',        hint: 'The qualification levels your athletes have reached.', sel: '.proof' },
     story:   { t: 'Your story',           hint: 'The feature section about why you coach.', sel: '.story' },
+    coachStories: { t: 'Other coaches\' stories', hint: 'One card per coach. Add a coach with + Add item. Their id (lowercase, no spaces) is what the "Meet the coaches" links point to.', sel: '#coach-stories' },
     lifters: { t: 'Who I coach',          hint: 'The three lifter types. The id must match a "start here" link.', sel: '.segments' },
     meetDay: { t: 'Meet day',             hint: 'The black section. Big photo shows pink, small photo shows black and white.', sel: '#meet-day' },
     plans:   { t: 'Coaching and prices',  hint: 'Your options. Tick "featured" for the black highlighted card.', sel: '#plans' },
@@ -218,8 +219,9 @@
     left: 'Left text', right: 'Right text', label: 'Small label', headline: 'Headline', headlineItalic: 'Headline, italic part',
     intro: 'Intro paragraph', applyButton: 'Apply button', plansButton: 'Second button', photoCredit: 'Photo credit', paths: '"Start here" links',
     text: 'Text', goesTo: 'Goes to lifter id', note: 'Right-hand note', rows: 'Rows', level: 'Level', who: 'Description', result: 'Result',
+    quote: 'Quote', storyId: 'Links to story (id)',
     photoCaption: 'Photo caption', paragraphs: 'Paragraphs', pullQuote: 'Pull quote', signature: 'Signature', heading: 'Heading',
-    types: 'Lifter types', id: 'Id (no spaces)', title: 'Title', goal: 'Goal line', headingPink: 'Heading, pink line', topTag: 'Top tag',
+    types: 'Lifter types', id: 'Id (lowercase, no spaces)', title: 'Title', goal: 'Goal line', headingPink: 'Heading, pink line', topTag: 'Top tag',
     photoTag: 'Tag on photo', bottomTag: 'Bottom tag', bigPhoto: 'Big photo (pink)', smallPhoto: 'Small photo (B&W)', rules: 'Meet-day promises',
     options: 'Coaching options', featured: 'Featured (black card)', badge: 'Badge (leave empty for none)', name: 'Name', price: 'Price',
     priceNote: 'After price', forWho: 'Who it\'s for', features: 'What\'s included', button: 'Button text', buttonLink: 'Button link',
@@ -227,7 +229,7 @@
     coachesLabel: 'Coaches heading', coaches: 'Coaches', role: 'Role and credential',
     tag: 'Tag', compareButton: 'Second button', tagline: 'Tagline', copyright: 'Copyright', instagramHandle: 'Instagram handle', photo: 'Photo'
   };
-  var LONG_KEYS = { intro: 1, text: 1, a: 1, who: 1, forWho: 1, pullQuote: 1 };
+  var LONG_KEYS = { intro: 1, text: 1, a: 1, who: 1, forWho: 1, pullQuote: 1, quote: 1 };
   var STYLE_NAMES = { bw: 'Black & white', natural: 'Natural colour', warm: 'Warm 35 mm' };
   var STYLE_FILTERS = { bw: 'grayscale(1) contrast(1.12)', natural: 'saturate(.85) contrast(1.04)', warm: 'sepia(.2) saturate(.88) contrast(.96)' };
 

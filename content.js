@@ -39,9 +39,10 @@ window.SITE = {
     headlineItalic: "warm-up room.",
     intro: "Our team travels to USA Weightlifting national meets, so if you're lifting there, you won't be warming up alone.",
     coachesLabel: "Meet the coaches",
+    // storyId: which story the name links to ("why-i-coach" is your story; others match a coach id below)
     coaches: [
-      { name: "Jacob Howard", role: "Head Coach · National USAW Coach" },
-      { name: "Stephanie Langdon", role: "Head Coach · USAW Level 2" }
+      { name: "Jacob Howard", role: "Head Coach · National USAW Coach", storyId: "why-i-coach" },
+      { name: "Stephanie Langdon", role: "Head Coach · USAW Level 2", storyId: "stephanie-langdon" }
     ],
     applyButton: "Apply for coaching",
     plansButton: "Ways to train",
@@ -81,6 +82,27 @@ window.SITE = {
     signature: "Jacob Howard · USA Weightlifting National Level Coach"
   },
 
+
+  /* ---------- Other coaches' stories ---------- */
+  coachStories: {
+    show: true,                       // false hides the whole section
+    label:   "The coaches",
+    heading: ["More than one coach", "in your corner."],   // second line shows in italics
+    // One card per coach. "id" must be lowercase with no spaces; "Meet the coaches" links use it.
+    coaches: [
+      {
+        id: "stephanie-langdon",
+        name: "Stephanie Langdon",
+        role: "Head Coach · USAW Level 2",
+        photo: { file: "images/coach-photo-placeholder.jpg", alt: "", style: "bw", focus: "50% 50%" },
+        paragraphs: [
+          "[Stephanie's story: how she found weightlifting]",
+          "[What she focuses on as a coach, and who she loves working with]"
+        ],
+        quote: "“[One line in her own words.]”"
+      }
+    ]
+  },
   /* ---------- Who I coach ---------- */
   lifters: {
     label: "Who I coach",
